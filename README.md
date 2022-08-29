@@ -18,6 +18,7 @@ Following environment/dependencies are required:
  - [CMake](https://cmake.org/download/)
  - [Qt 5.15](https://www.qt.io/download-qt-installer)
  - [Python 3.9](https://www.python.org/)
+ - 7zip
 
 Optional:
  - [Scons 4.3.1](https://pypi.org/project/SCons/)(If you are using SCons).
@@ -28,8 +29,8 @@ Before you start, please notice that:
  - **Please make sure you can download files in cmake.** If you can't, or you don't want to, please refer to the "Dependencies List" section, and download them manually.
 
 1. Modify `dependencies/CMakeLists.txt`
-	- Check Line 7. Choose a number <= your CPU cores.
-	- Check Line 8 and Line 9 for proxies. If you don't know what it is, or you don't need it, just comment these 2 lines.
+	- Check Line 9. Choose a number <= your CPU cores.
+	- Check Line 12 and Line 13 for proxies. If you don't know what it is, or you don't need it, just comment these 2 lines.
 2. Dependencies compilation: Go to `dependencies/`, and execute `cmake ./`. (**Too many files, it will take a long time to compile.**)
 
 ### Mitsuba Compilation

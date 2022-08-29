@@ -6,11 +6,11 @@ set(CMAKE_CXX_STANDARD 17)
 
 # Following lines are configurations need to modify.
 include(ProcessorCount)
-ProcessorCount(COMPILE_THREAD)
+ProcessorCount(8)
 message("Thread Count: ${COMPILE_THREAD}")
 
-set(ENV{http_proxy}  "http://127.0.0.1:10809") # for http
-set(ENV{https_proxy} "http://127.0.0.1:10809") # for https
+# set(ENV{http_proxy}  "http://127.0.0.1:10809") # for http
+# set(ENV{https_proxy} "http://127.0.0.1:10809") # for https
 
 if(NOT CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING
@@ -216,9 +216,9 @@ set(FFTW_PROJECT_DIR "${DEPENDENCIES_DOWNLOAD_DIR}/fftw-3.3.5-dll64")
 file(MAKE_DIRECTORY ${FFTW_PROJECT_DIR})
 DownloadExternal("fftw" "https://fftw.org/pub/fftw/fftw-3.3.5-dll64.zip" "fftw-3.3.5-dll64.zip" "CB3C5AD19A89864F036E7A2DD5BE168C")
 execute_process(COMMAND ${CMAKE_COMMAND} -E tar xf ../fftw-3.3.5-dll64.zip WORKING_DIRECTORY ${FFTW_PROJECT_DIR})
-execute_process(COMMAND lib /def:libfftw3f-3.def WORKING_DIRECTORY ${FFTW_PROJECT_DIR})
-execute_process(COMMAND lib /def:libfftw3-3.def WORKING_DIRECTORY ${FFTW_PROJECT_DIR})
-execute_process(COMMAND lib /def:libfftw3l-3.def WORKING_DIRECTORY ${FFTW_PROJECT_DIR})
+execute_process(COMMAND lib /machine:x64 /def:libfftw3f-3.def WORKING_DIRECTORY ${FFTW_PROJECT_DIR})
+execute_process(COMMAND lib /machine:x64 /def:libfftw3-3.def WORKING_DIRECTORY ${FFTW_PROJECT_DIR})
+execute_process(COMMAND lib /machine:x64 /def:libfftw3l-3.def WORKING_DIRECTORY ${FFTW_PROJECT_DIR})
 file(GLOB FFTW_INC "${FFTW_PROJECT_DIR}/*.h")
 file(GLOB FFTW_LIB "${FFTW_PROJECT_DIR}/*.lib")
 file(GLOB FFTW_BIN "${FFTW_PROJECT_DIR}/*.dll")
