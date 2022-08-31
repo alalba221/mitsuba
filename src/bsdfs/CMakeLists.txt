@@ -20,6 +20,8 @@ add_library(difftrans SHARED difftrans.cpp)
 add_library(hk SHARED hk.cpp)
 add_library(null SHARED null.cpp)
 add_library(thindielectric SHARED ior.h thindielectric.cpp)
+
+
 target_link_libraries(diffuse mitsuba-python)
 target_link_libraries(dielectric mitsuba-python)
 target_link_libraries(conductor mitsuba-python)
@@ -42,6 +44,8 @@ target_link_libraries(difftrans mitsuba-python)
 target_link_libraries(hk mitsuba-python)
 target_link_libraries(null mitsuba-python)
 target_link_libraries(thindielectric mitsuba-python)
+
+
 
 set_target_properties(diffuse PROPERTIES FOLDER "plugins")
 set_target_properties(dielectric PROPERTIES FOLDER "plugins")
@@ -66,6 +70,11 @@ set_target_properties(hk PROPERTIES FOLDER "plugins")
 set_target_properties(null PROPERTIES FOLDER "plugins")
 set_target_properties(thindielectric PROPERTIES FOLDER "plugins")
 
+
 add_library(irawan irawan.cpp)
 target_link_libraries(irawan mitsuba-python)
 set_target_properties(irawan PROPERTIES FOLDER "plugins")
+
+add_library(nbrdf_npy SHARED nbrdf_npy.cpp)
+target_link_libraries(nbrdf_npy mitsuba-python)
+set_target_properties(nbrdf_npy PROPERTIES FOLDER "plugins")

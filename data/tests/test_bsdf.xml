@@ -1,7 +1,7 @@
 <!-- This file defines a series of BSDF instances
 	 to be tested for consistency. This is done
 	 using the testcase 'test_chisquare' -->
-<scene version="0.5.0">
+<scene version="0.6.0">
 	<!-- Test the smooth plastic model with preserveColors=false -->
 	<bsdf type="plastic">
 		<boolean name="preserveColors" value="false"/>
