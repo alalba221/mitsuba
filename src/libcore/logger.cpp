@@ -135,8 +135,8 @@ void Logger::log(ELogLevel level, const Class *theClass,
         if (runningInDebugger)
             __asm__ ("int $3");
 #elif defined(__WINDOWS__)
-        if (IsDebuggerPresent())
-            __debugbreak();
+        //if (IsDebuggerPresent())
+            //__debugbreak();
 #endif
 
         DefaultFormatter fmt;
